@@ -38,3 +38,24 @@ stack.push(3);
 stack.pop();
 stack.print();
 
+
+console.log('<--------------十进制转二（多）进制>--------------->');
+
+var devideby2 = function(num){
+    var numstack = new Stack();
+    var rem,resnum='';
+    while(num>0) {
+        rem = Math.floor(num%2);
+        numstack.push(rem);
+        num = Math.floor(num/2);
+    }
+    while(!numstack.isEmpty()) {
+        resnum += numstack.pop().toString();
+    }
+    return resnum;
+};
+
+
+var num = 13;
+console.log('13 转二进制：',devideby2(num));
+
